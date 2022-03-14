@@ -1,0 +1,63 @@
+package simp;
+import java.util.ArrayList;
+import java.util.Scanner;
+
+
+public class employ {
+	Scanner sc=new Scanner(System.in);
+	String name=sc.nextLine();
+   public static void main(String[] args) {
+	   Scanner sc=new Scanner(System.in);
+	   
+	   ArrayList<String> employ=new ArrayList<String>();
+	 String name,nam,designation;
+	 
+ 	   while(true) {
+		   System.out.println("Please choose one the below option:\r\n"
+		   		+ "1 - Show all the employee records\r\n"
+		   		+ "2 - Add employee\r\n"
+		   		+ "3 - Remove employee\r\n"
+		   		+ "4 - get employee details\r\n"
+		   		+ "5 - update employee details\r\n"
+		   		+ "-1 - Exit application");
+		   
+		   int enter=sc.nextInt();
+		   if(enter==-1) {
+			   break;
+		    }
+		   else {
+		   switch(enter) {
+		   case 1:
+			   name=sc.next();
+			   //designation=sc.next();
+			   employ.add(name);
+			 //  employ.add(designation);
+			  
+			   System.out.println(employ.toString());
+			   break;
+		   case 2:
+			   System.out.println("choose specific employee");
+			   int choose=sc.nextInt();
+			   System.out.println(employ.get(choose));
+			   break;
+		   case 3:
+			  int del=sc.nextInt();
+			   System.out.println("select what to delete based on index:");
+			   employ.remove(del);
+			   break;
+		   case 5:
+			   nam=sc.nextLine();
+			   int in=sc.nextInt();
+			   employ.set(in,nam);
+			   System.out.println("newly updated employ list is "+employ.toString());
+			   break;
+		   case 4: //to print all employs list
+			   System.out.println(employ.toString());
+			   break;
+			default :
+				System.out.println("please enter valid inputs");
+		   }
+	   }
+ 	   }
+    }
+}
